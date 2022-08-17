@@ -1,0 +1,96 @@
+Write a Python program to check the validity of a password (input from users).
+
+Validation :
+
+At least 1 letter between [a-z] and 1 letter between [A-Z].
+At least 1 number between [0-9].
+At least 1 character from [$#@].
+Minimum length 6 characters.
+Maximum length 16 characters.
+
+
+import re
+p= input("Input your password")
+x = True
+while x:  
+    if (len(p)<6 or len(p)>12):
+        break
+    elif not re.search("[a-z]",p):
+        break
+    elif not re.search("[0-9]",p):
+        break
+    elif not re.search("[A-Z]",p):
+        break
+    elif not re.search("[$#@]",p):
+        break
+    elif re.search("\s",p):
+        break
+    else:
+        print("Valid Password")
+        x=False
+        break
+
+if x:
+    print("Not a Valid Password")
+	
+	
+	
+==============================================
+import re
+
+
+pswd = 'XdsE83&!'
+reg = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!#%*?&]{8,18}$"
+
+# compiling regex
+match_re = re.compile(reg)
+
+# searching regex
+res = re.search(match_re, pswd)
+
+# validating conditions
+if res:
+    print("Valid Password")
+else:
+    print("Invalid Password")
+
+
+===========================================
+Write a Python program to remove leading zeros from an IP address.
+
+ip = "216.08.094.196"
+
+
+import re
+ip = "216.08.094.196"
+string = re.sub('\.[0]*', '.', ip)
+print(string)
+
+==============================================
+Write a Python program to extract year, month and date from an url.
+
+url = "https://www.washingtonpost.com/news/football-insider/wp/2016/09/02/odell-beckhams-fame-rests-on-one-stupid-little-ball-josh-norman-tells-author/"
+
+
+
+import re
+def extract_date(url):
+        return re.findall(r'/(\d{4})/(\d{1,2})/(\d{1,2})/', url)
+url1= "https://www.washingtonpost.com/news/football-insider/wp/2016/09/02/odell-beckhams-fame-rests-on-one-stupid-little-ball-josh-norman-tells-author/"
+print(extract_date(url1))
+
+
+===========================================================
+Write a Python program to find urls in a string.
+
+text = '<p>Contents :</p><a href="https://w3resource.com">Python Examples</a><a href="http://github.com">Even More Examples</a>'
+
+
+import re
+text = '<p>Contents :</p><a href="https://w3resource.com">Python Examples</a><a href="http://github.com">Even More Examples</a>'
+urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', text)
+print("Original string: ",text)
+print("Urls: ",urls)
+
+
+
