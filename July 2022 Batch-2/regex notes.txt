@@ -1,0 +1,88 @@
+"he.*o"  
+
+* - zero or more occurences
+
+helo - ?? match
+
+hellllllo -- ? matches
+
+heo - ?? no match
+
+he.+o - pattern
+
+
+hezo - ?? no match
+
+herrrrro - ?? matches
+
+"he.?o" - pattern (zero or one)
+
+helllllo - ? no match
+
+hello - ??  matches
+
+"he.{2}o"
+
+hello - ?? match
+
+hezzzzo - ?? no match
+
+hezo -?? no match
+
+("falls|stays")("he.?o")
+
+nayagara falls ?? match
+
+holiday stays ?  match
+
+holiday inn -?? no match
+
+("\AThe")("spain\Z")
+
+\b - begin or end
+\B - ?? opposite of \b - ?? neither begin nor end
+
+("ain\b")
+
+("ain\B") 
+The spain in rain - ?? no match
+
+The rain in spain - ? no match
+
+\d  - digit matching
+\D  - non digit matching
+
+(he.*\do) 
+
+hell22o - ??
+
+\A
+\Z
+\b
+\B
+\d
+\D
+\s - white space ??  - (\s) - "This is python class" - match
+                             "heeeeeeeeo" - ?? no match
+\S - Opposite of \s -- "heeeeeeeeo" - ?? match
+								"This is python class" - no match
+
+\w - "hhhhhhh333_" ? matches
+
+\W - "%^&$###" -- ??  matches
+
+password validation ?? 
+16 chars
+1 special
+1 digit
+
+previous passwd not used
+
+web interface - api - pass validation code written in python
+
+
+
+
+
+
+
